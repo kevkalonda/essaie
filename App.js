@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// npm install --save react-navigation
+// npm install @react-navigation/native
+// npm install @react-navigation/stack
+
+import * as React from 'react';
+
+import { NavigationContainer } from '@react-navigation/native';
+const image = { uri: "https://images3.livreshebdo.fr/sites/default/files/styles/image_full/public/assets/images/nawak_trump_apocalypse.jpg?itok=dsezkurH" };
+
+import Root from "./navigation";
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <NavigationContainer>
+            <Root />
+        </NavigationContainer>
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
