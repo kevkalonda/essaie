@@ -19,7 +19,11 @@ import app2 from './API/carte';
 import latitudeLongitude from './API/latitudeLongitude';
 
 import carte from './components/connecter/connecter.js';
-
+import Proposer from './components/connecter/proposerCourse';
+import Arrets from './components/connecter/Ajoutarrets';
+import Recherche from './components/connecter/rechercheCovoiturages';
+import RechercheSr from './components/connecter/rechercheSoiree';
+import filtreRecherche from './components/connecter/filtre';
 
 
 import Welcome from './components/tutoriel/welcome'
@@ -76,7 +80,7 @@ const Stack = createStackNavigator();
 
 export default function Root() {
     return (
-        <Stack.Navigator initialRouteName="app">
+        <Stack.Navigator initialRouteName="Home">
 
             <Stack.Screen name="Home" component={accueil} />
             <Stack.Screen name="Connecter" component={connexion} />
@@ -91,9 +95,14 @@ export default function Root() {
             <Stack.Screen name="app" component={app} />
             <Stack.Screen name="app2" component={app2} />
 
-
-
+            
             <Stack.Screen name="carte" component={carte} />
+            <Stack.Screen name="Proposition course" component={Proposer} />
+            <Stack.Screen name="Ajouts arrets" component={Arrets} />
+            <Stack.Screen name="Recherche covoit" component={Recherche} />
+            <Stack.Screen name="Recherche soiree" component={RechercheSr} />
+            <Stack.Screen name="filtre" component={filtreRecherche} />
+            
 
 
             <Stack.Screen name="Welcome" component={Welcome} />

@@ -85,12 +85,17 @@ class SimpleMap extends Component {
         this.unsubscribe = firebase.auth.onAuthStateChanged(user => {
             if (user) {
                 this.navigate(user);
-                console.log(this.__latitude("Paris"))
+                //console.log(this.__latitude("Paris"))
             }
         });
 
     }
-
+    RedirectionProposer() {
+        this.props.navigation.navigate("Proposition course");
+    }
+    RedirectionRecherche() {
+        this.props.navigation.navigate("Recherche covoit");
+    }
     componentWillUnmount() {
         // Don't forget to unsubscribe when the component unmounts
         this.unsubscribe();
@@ -200,24 +205,24 @@ class SimpleMap extends Component {
                             <Icon style={styles.icon} name={'map-outline'} size={25} color={'#BD1550'} />
                             <Text style={{ color: "#BD1550", fontSize: 11, textAlign: "center" }}>Carte</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => RedirectionDescription()}>
+                        <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => alert("non implemeter")}>
                             <Icon style={styles.icon} name={'md-today-sharp'} size={25} color={'rgba(255,255,255,1)'} />
                             <Text style={styles.text}>Agenda</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => RedirectionDescription()}>
+                        <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => this.RedirectionProposer()}>
                             <Icon style={styles.icon} name={'add-circle'} size={25} color={'rgba(255,255,255,1)'} />
                             <Text style={styles.text}>Proposer</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => RedirectionDescription()}>
+                        <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => this.RedirectionRecherche()}>
+                            <Icon style={styles.icon} name={'md-search'} size={25} color={'rgba(255,255,255,1)'} />
+                            {/*<Icon style={styles.icon} name={'ios-person'} size={25} color={'rgba(255,255,255,1)'} />*/}
+                            <Text style={styles.text}>Rechercher</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => alert("non implemeter")}>
                             <Icon style={styles.icon} name={'chatbubble'} size={25} color={'rgba(255,255,255,1)'} />
                             <Text style={styles.text}>Message</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => RedirectionDescription()}>
-                            <Icon style={styles.icon} name={'ios-person'} size={25} color={'rgba(255,255,255,1)'} />
-                            <Text style={styles.text}>Compte</Text>
-                        </TouchableOpacity>
+                        </TouchableOpacity> 
 
 
 

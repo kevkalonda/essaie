@@ -19,7 +19,7 @@ export default function Accueil(props) {
             <View style={{ flex: 1 }} />
             <View style={{ flex: 1 }} />
             <View style={styles.container}  >
-                <Text style={styles.text}>Bienvenue dans la Wé-Co Family </Text>
+                <Text style={styles.text}>Bienvenue dans la WÉ-CO Family </Text>
                 <Text style={styles.soustext}>Ton covoiturage de nuit pour toutes tes sorties</Text>
                 <Text style={styles.text3}>Choisis ta route :</Text>
                 <TouchableOpacity onPress={() => redirectionConnexion()}>
@@ -29,7 +29,7 @@ export default function Accueil(props) {
                     <Text style={styles.buttonTextTwo}> Je suis un Professionnel </Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => redirectionTutoriel()}>
-                    <Text style={styles.buttonTextTwo}> Je Découvre Wé-CO</Text>
+                    <Text style={styles.buttonTextTwo}> Je Découvre WÉ-CO</Text>
                 </TouchableOpacity>
             </View>
         </ImageBackground>

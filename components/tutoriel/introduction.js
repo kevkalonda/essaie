@@ -127,7 +127,7 @@ const Introduction = (props) => {
         <ImageBackground source={require('../../assets/font.png')} style={{ flex: 1, justifyContent: 'center', alignItems: 'center', fontWeight: 50 }}  >
             <View style={styles.container}>
                 <Text style={styles.textone}>Introduction</Text>
-                <Text style={styles.texttwo}>Comment comptes-tu utiliser Wé-CO ? Tu pourras le modifier plus tard dans ton profil</Text>
+                <Text style={styles.texttwo}>Comment comptes-tu utiliser WÉ-CO ? Tu pourras le modifier plus tard dans ton profil</Text>
                 <View style={styles.btncontainer}>
                     <TouchableOpacity onPress={() => RedirectionPassager()}>
                         <Text style={styles.buttonTextOne}>PASSAGER</Text>

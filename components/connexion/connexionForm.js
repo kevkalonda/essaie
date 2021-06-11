@@ -84,21 +84,21 @@ export default class login_form extends React.Component {
                     }
                     else {
                         //alert("Vous n'avez pas un compte veuillez en créer un");
+                        //on supprimme prck le sdk crée un compte
                         user.delete().then(function () {
                             // User deleted.
-                            //console.log("utilisateur supprimer")
+                            console.log("utilisateur supprimer")
+                            this.props.navigation.navigate("Compte inexistant")
                         }).catch(function (error) {
                             // An error happened.
                             console.log(error)
-                            //console.log("erreur dans la suppression de l'utilisateur connexion")
-                            alert("une erreur s'est produite vueillez contacter le service Wé-co")
                         });
-                        this.props.navigation.navigate("Compte inexistant")
+                        
                     }
                 }).catch((error) => {
                     console.log("erreurIciConnexionFormulaire");
                     console.log(error)
-                    alert("une erreur s'est produite vueillez contacter le service Wé-co")
+                    //alert("une erreur s'est produite vueillez contacter le service Wé-co")
                 });
 
             }).catch((error) => {
@@ -109,7 +109,7 @@ export default class login_form extends React.Component {
                 var email = error.email;
                 // The firebase.auth.AuthCredential type that was used.
                 var credential = error.credential;
-                alert("une erreur s'est produite vueillez contacter le service Wé-co")
+                //alert("une erreur s'est produite vueillez contacter le service Wé-co")
                 // ...
             });
     }

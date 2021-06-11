@@ -1,7 +1,7 @@
 import React from "react";
 import { ImageBackground, Dimensions, StyleSheet, View, SafeAreaView, Text, Alert, ProgressViewIOSComponent, Image, TextInput, TouchableOpacity } from 'react-native';
 
-import message from '../../assets/favicon.png';
+import message from '../../assets/Icon ionic-ios-mail.png';
 
 const { width: WIDTH } = Dimensions.get('window');
 
@@ -9,7 +9,7 @@ const { width: WIDTH } = Dimensions.get('window');
 const sendMailConfirmation = (props) => {
 
     const firstConnexion = () => {
-        props.navigation.navigate("Connecter");
+        props.navigation.navigate("Welcome");
     }
     const redirectConnexion = () => {
         props.navigation.navigate("Connexion");

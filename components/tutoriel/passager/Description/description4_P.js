@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ImageBackground, Dimensions, StyleSheet, Button, View, SafeAreaView, Text, Alert, ProgressViewIOSComponent, Image, TextInput, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
+import ajoutArrets from "../../../connecter/Ajoutarrets";
 const { width: WIDTH, height: HEIGTH } = Dimensions.get('window')
 
 
@@ -10,9 +11,13 @@ const DescriptionP4 = (props) => {
         description: "",
         mdp: "",
     });
+    useEffect(() => {
+        console.log("ajout arret");
+    });
 
+    var x = "";
     const handlerStateText = (name, text) => {
-        setState({ ...state, [name]: text })
+        x = text;
     }
     const RedirectionDescription = () => {
         props.navigation.navigate("WelcomeP");
@@ -23,6 +28,34 @@ const DescriptionP4 = (props) => {
     const Back = () => {
         props.navigation.goBack()
     }
+
+    const [dataProposition, setDataProposition] = useState({
+        arrets: [],
+    });
+
+    const [art, setArt] = useState(true)
+
+    const supprimerArret = (arret_i) => {
+        var index = dataProposition.arrets.indexOf(arret_i);
+        dataProposition.arrets.splice(index, 1);
+        setArt(!art);
+    }
+
+    const ajoutFavorisLieux = () => {
+        if (x != "") {
+            dataProposition.arrets.push(x);
+            setArt(!art);
+        }
+    }
+
+    const listLieuxFavoris = dataProposition.arrets.map((arret_i) =>
+        <View style={{ borderRadius: 5, flexDirection: "row", backgroundColor: "#4083A7", margin: 5, justifyContent: "space-between", padding:5 }}>
+            <Text style={styles.text} > {arret_i} </Text>
+            <TouchableOpacity onPress={() => supprimerArret(arret_i)}>
+                <Icon style={styles.icon} name={'ios-close'} size={10} color={'white'} />
+            </TouchableOpacity>
+        </View>
+    )
 
     return (
         <ImageBackground source={require('../../../../assets/font.png')} style={{ flex: 1, justifyContent: 'center', alignItems: 'center', fontWeight: 50 }}  >
@@ -42,9 +75,13 @@ const DescriptionP4 = (props) => {
                         placeholder={'Lieux de sorties habituels'}
                         placeholderTextColor={'rgba(255,255,255,0.7)'}
                         underlineColorAndroid='transparent' />
-                    <TouchableOpacity style={{ backgroundColor: 'rgba(0,0,0,0.35)', padding: 10, borderRadius: 10, }} onPress={() => Back()}>
+                    <TouchableOpacity style={{ backgroundColor: 'rgba(0,0,0,0.35)', padding: 10, borderRadius: 10, }} onPress={() => ajoutFavorisLieux()}>
                         <Icon name={'add'} size={20} color={'rgba(255,255,255,1)'} />
                     </TouchableOpacity>
+                    
+                </View>
+                <View>
+                    {listLieuxFavoris}
                 </View>
 
                 <View style={styles.bottomContain}>
@@ -66,13 +103,19 @@ const DescriptionP4 = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        height: HEIGTH * 0.45,
+        height: HEIGTH * 0.75,
         width: WIDTH * 0.80,
         backgroundColor: '#17223B',
         borderRadius: 10,
         color: 'white',
     },
+    text: {
 
+        color: "white",
+        fontSize: 16,
+        textAlign: "center"
+
+    },
     bottomContain: {
         flexDirection: "row-reverse",
         margin: 10,

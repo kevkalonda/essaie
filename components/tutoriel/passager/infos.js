@@ -207,6 +207,7 @@ const Infos = (props) => {
                                 style={styles.input}
                                 onChangeText={(text) => handlerStateText('jour', text)}
                                 placeholder={'JJ'}
+                                keyboardType={"numeric"}
                                 placeholderTextColor={'rgba(255,255,255,0.7)'}
                                 underlineColorAndroid='transparent' />
                             <Text style={{ fontSize: 25, color: 'white', marginTop: 10 }}>/</Text>
@@ -214,7 +215,8 @@ const Infos = (props) => {
                                 style={styles.input}
                                 onChangeText={(text) => handlerStateText('mois', text)}
                                 placeholder={'MM'}
-                                value={text}
+                                keyboardType={"numeric"}
+                                
                                 placeholderTextColor={'rgba(255,255,255,0.7)'}
                                 underlineColorAndroid='transparent' />
                             <Text style={{ fontSize: 25, color: 'white', marginTop: 10, }}>/</Text>
@@ -222,6 +224,7 @@ const Infos = (props) => {
                                 style={styles.input}
                                 onChangeText={(text) => handlerStateText('annee', text)}
                                 placeholder={'AAAA'}
+                                keyboardType={"numeric"}
                                 placeholderTextColor={'rgba(255,255,255,0.7)'}
                                 underlineColorAndroid='transparent' />
                         </View>

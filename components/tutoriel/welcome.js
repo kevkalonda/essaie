@@ -16,7 +16,7 @@ export default class Welcome extends React.Component {
             <ImageBackground source={require('../../assets/font.png')} style={{ flex: 1, justifyContent: 'center', alignItems: 'center', fontWeight: 50 }}  >
                 <View style={styles.container}>
                     <Text style={styles.textone}>Bienvenue !</Text>
-                    <Text style={styles.texttwo}>Bienvenue dans la Wé-CO family !</Text>
+                    <Text style={styles.texttwo}>Bienvenue dans la WÉ-CO family !</Text>
                     <Text style={styles.texttwo}>Nous allons avoir besoin de quelques infos pour cerner un peu plus tes attentes</Text>
                     <View style={styles.containericon}>
                         <TouchableOpacity style={styles.next} onPress={() => this.Redirection()}>

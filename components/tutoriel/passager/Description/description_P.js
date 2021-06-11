@@ -73,7 +73,7 @@ const DescriptionP = (props) => {
                 console.log("ici");
                 firebase.dataBase.ref('users/' + user.uid).get().then((snapshot) => {
                     if (snapshot.exists()) {
-
+                        console.log("ici");
                         //on stock les donnée de l'utilisateur pour la reutiliser
 
                         data.info_user.firstName = snapshot.val().info_user.firstName;

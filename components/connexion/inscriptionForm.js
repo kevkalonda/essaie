@@ -133,9 +133,16 @@ export default class login_form_inscription extends React.Component {
                     //gestion d'erreur, le mot de passe doit contenir minimum 6 char
                     var errorCode = error.code;
                     var errorMessage = error.message;
-                    alert("le mot de passe doit avoir au moins 6 caractères");
-                    console.log(errorCode);
-                    console.log(errorMessage);
+                    if (errorCode === "auth/email-already-in-use") {
+                        alert("Un compte existe déjà avec ce mail")
+                        console.log( errorCode);
+                    }
+                    else {
+                        alert("le mot de passe doit avoir au moins 6 caractères");
+                        console.log(errorMessage);
+                    }
+                    
+                    
                 });
         }
         else {

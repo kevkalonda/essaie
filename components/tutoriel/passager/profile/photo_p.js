@@ -1,6 +1,6 @@
 //npm install reactjs-popup
 
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { ImageBackground, Dimensions, StyleSheet, Button, ActivityIndicator, View, SafeAreaView, Text, Alert, ProgressViewIOSComponent, Image, TextInput, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 const { width: WIDTH, height: HEIGTH } = Dimensions.get('window');
@@ -77,6 +77,12 @@ const PhotoP2 = (props) => {
             }
         }
     });
+
+    const [art, setArt] = useState(true)
+    useEffect(() => {
+        console.log("ajout arret");
+    });
+
     const [state, setState] = useState({
         showPass: true,
         press: false,
@@ -133,7 +139,8 @@ const PhotoP2 = (props) => {
                         //ajout information dans la base
                         firebase.dataBase.ref('users/' + snapshot.val().data_user.uid).set(data).then(() => {
                             console.log("ajout infos reussi");
-                            props.navigation.navigate("PhotoP2");
+                            //props.navigation.navigate("PhotoP2");
+                            setArt(!art);
                         }).catch((err) => {
                             console.log("err ajout info")
                             console.log(err)
@@ -173,7 +180,8 @@ const PhotoP2 = (props) => {
                         firebase.dataBase.ref('users/' + snapshot.val().data_user.uid).set(data).then(() => {
                             alert("profil de profil a été modifier");
                             console.log("ajout infos reussi");
-                            props.navigation.navigate("PhotoP2");
+                            //props.navigation.navigate("PhotoP2");
+                            setArt(!art);
                         }).catch((err) => {
                             console.log("err ajout info")
                             console.log(err)
@@ -215,7 +223,8 @@ const PhotoP2 = (props) => {
                         firebase.dataBase.ref('users/' + snapshot.val().data_user.uid).set(data).then(() => {
                             alert("suppression reussi")
                             console.log("ajout infos reussi");
-                            props.navigation.navigate("PhotoP2");
+                            //props.navigation.navigate("PhotoP2");
+                            setArt(!art);
                         }).catch((err) => {
                             console.log("err ajout info")
                             console.log(err)

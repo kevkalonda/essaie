@@ -172,6 +172,7 @@ const InfosP = (props) => {
                             style={styles.input}
                             onChangeText={(text) => handlerStateText('codePostal', text)}
                             placeholder={'Code Postal'}
+                            keyboardType={"numeric"}
                             placeholderTextColor={'rgba(255,255,255,0.7)'}
                             underlineColorAndroid='transparent' />
                     </View>

@@ -11,6 +11,9 @@ export default class WelcomeP extends React.Component {
     state = {
         mailVerifield: false,
     }
+    RedirectionCarte() {
+        this.props.navigation.navigate("app");
+    }
     RedirectionProfil() {
         this.props.navigation.navigate("ProfilP");
     }
@@ -23,14 +26,14 @@ export default class WelcomeP extends React.Component {
         return this.state.mailVerifield === false ? (
             <ImageBackground source={require('../../../assets/font.png')} style={{ flex: 1, justifyContent: 'center', alignItems: 'center', fontWeight: 50 }}  >
                 <View style={styles.container}>
-                    <Text style={styles.textone}>Bienvenue dans la Wé-CO FAMILY</Text>
+                    <Text style={styles.textone}>Bienvenue dans la WÉ-CO FAMILY</Text>
                     <Text style={styles.texttwo}>Choisis ta route!</Text>
                     <View style={styles.btncontainer}>
                         <TouchableOpacity onPress={() => this.RedirectionProfil()}>
                             <Text style={styles.buttonPink}>COMPLETER MON PROFIL</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => alert('Explorer l application')}>
+                        <TouchableOpacity onPress={() => this.RedirectionCarte()}>
                             <Text style={styles.buttonTextOne}>EXPLORER L'APPLICATION</Text>
                         </TouchableOpacity>
 
