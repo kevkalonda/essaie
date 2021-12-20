@@ -3,6 +3,5 @@
 
 int main(){
 	printf("Bonjour\n");
-	printf("premiere modif\n");
 	return 0;
 }
